@@ -1,9 +1,20 @@
+dns323-firmware-tools
+expeyes-firmware-dev
+firmware-ath9k-htc
+firmware-ath9k-htc-dbgsym
+firmware-linux-free
+firmware-microbit-micropython
+firmware-microbit-micropython-doc
+grub-firmware-qemu
+hdmi2usb-fx2-firmware
+nxt-firmware
+sigrok-firmware-fx2lafw
+ubertooth-firmware
+ubertooth-firmware-source
 amd64-microcode
 atmel-firmware
 bluez-firmware
 dahdi-firmware-nonfree
-dns323-firmware-tools
-expeyes-firmware-dev
 firmware-adi
 firmware-amd-graphics
 firmware-atheros
@@ -11,19 +22,19 @@ firmware-bnx2
 firmware-bnx2x
 firmware-brcm80211
 firmware-cavium
-firmware-crystalhd
 firmware-intel-sound
 firmware-intelwimax
-# firmware-ipw2x00
-# firmware-ivtv
+firmware-ipw2x00
+firmware-ivtv
 firmware-iwlwifi
 firmware-libertas
 firmware-linux
-firmware-linux-free
 firmware-linux-nonfree
 firmware-misc-nonfree
 firmware-myricom
+firmware-netronome
 firmware-netxen
+firmware-qcom-media
 firmware-qlogic
 firmware-ralink
 firmware-realtek
@@ -31,11 +42,5 @@ firmware-samsung
 firmware-siano
 firmware-ti-connectivity
 firmware-zd1211
-# grub-firmware-qemu
-hdmi2usb-fx2-firmware
 intel-microcode
 midisport-firmware
-nxt-firmware
-sigrok-firmware-fx2lafw
-ubertooth-firmware
-ubertooth-firmware-source
