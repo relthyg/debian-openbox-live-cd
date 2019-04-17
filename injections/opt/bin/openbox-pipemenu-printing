@@ -1,0 +1,25 @@
+#!/bin/bash
+# ---------------------------------------------------------------------
+# An Openbox pipemenu for configuring printing under CrunchBang Linux.
+# Written for CrunchBang Linux <http://crunchbanglinux.org/>
+# ---------------------------------------------------------------------
+# Start pipemenu
+echo "    <openbox_pipe_menu>"
+
+# check for system-config-printer
+if [ -x "/usr/bin/system-config-printer" ];then
+    INSTALLED=true
+    cat << _scf_
+	    <item label="Configure Printers">
+            <action name="Execute">
+				<command>
+					gksudo system-config-printer
+				</command>
+			</action>
+		</item>
+_scf_
+fi
+
+# End pipemenu
+echo "    </openbox_pipe_menu>"
+exit 0

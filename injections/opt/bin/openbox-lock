@@ -1,0 +1,21 @@
+#!/bin/bash
+# openbox-lock
+# -------
+# This is a wrapper for a custom screenlocker command
+# If running in live mode, offer up a prompt detailing the live session password.
+# Else, lock screen
+
+SCREENLOCKER="light-locker-command -l"
+
+if [ -d /lib/live/mount/overlay ]; then
+    if [ ! -f "$HOME/.config/openbox-lock" ]; then
+			zenity --info --title="Lock screen info:" --text="Lock screen has detected you are running a live session.\nThe username needed to unlock the screen is \"user\" and the password is \"live\".\nThis notice will only be displayed once per live session."
+        touch "$HOME/.config/openbox-lock"
+        $SCREENLOCKER
+        exit 0
+    fi
+    $SCREENLOCKER
+else
+    $SCREENLOCKER
+fi
+exit 0

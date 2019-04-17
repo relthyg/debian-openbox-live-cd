@@ -1,0 +1,14 @@
+#!/bin/bash
+# This script adds the deb-multimedia repo and performs an update
+
+[[ $UID -ne "0" ]] && echo "This script must be run as root." && exit 1
+
+if [ -f "/etc/apt/sources.list.d/deb-multimedia.list" ]; then
+    rm -f /etc/apt/sources.list.d/deb-multimedia.list
+fi
+
+echo "deb http://www.deb-multimedia.org stretch main non-free" > /etc/apt/sources.list.d/deb-multimedia.list
+
+aptitude search deb-multimedia-keyring | grep ^i > /dev/null || apt-get --allow-unauthenticated update && apt-get --allow-unauthenticated -y install deb-multimedia-keyring
+apt update
+apt -y upgrade || (sudo apt update && sudo apt -y --fix-broken install) && exit 0

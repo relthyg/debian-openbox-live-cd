@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# Simple script to switch between two tint2 configuration files
+# ----------------------------------------------------------------------
+if [ -f ~/.config/tint2/tint2rc.vert ]
+then
+	mv ~/.config/tint2/tint2rc ~/.config/tint2/tint2rc.horiz && mv ~/.config/tint2/tint2rc.vert ~/.config/tint2/tint2rc && tint2restart
+	exit 0
+fi
+
+if [ -f ~/.config/tint2/tint2rc.horiz ]
+then	
+	mv ~/.config/tint2/tint2rc ~/.config/tint2/tint2rc.vert && mv ~/.config/tint2/tint2rc.horiz ~/.config/tint2/tint2rc && tint2restart
+	exit 0
+fi

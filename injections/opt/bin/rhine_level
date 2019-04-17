@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+import re
+import json
+import requests
+
+html = requests.get("http://pegel.bonn.de/php/rheinpegel.php").text
+regex = r"databack\s=\s(\[.+\])"
+match = re.search(regex, html)
+pegel_data = json.loads(match.group(1))
+print(pegel_data[-1]["y"])
