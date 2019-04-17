@@ -6,6 +6,6 @@
 mv /etc/apt/sources.list /etc/apt/sources.list.bak
 
 # Generate new sources.list
-grep 'stretch main' /etc/apt/sources.list.bak | sed 's/stretch main/stretch main contrib non-free/g' > /etc/apt/sources.list
+grep 'buster main' /etc/apt/sources.list.bak | sed 's/buster main/buster main contrib non-free/g' > /etc/apt/sources.list
 echo "" >> /etc/apt/sources.list
 grep 'security.debian' /etc/apt/sources.list.bak | sed 's/deb-src/#deb-src/g' >> /etc/apt/sources.list
