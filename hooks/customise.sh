@@ -18,6 +18,8 @@ mv ${rootdir}/etc/resolv.conf ${rootdir}/etc/resolv.conf.bak
 cat /etc/resolv.conf > ${rootdir}/etc/resolv.conf
 
 prepare_apt_source "${LWR_MIRROR}" "${LWR_DISTRIBUTION}"
+sed s/^deb/deb-src/g ${rootdir}/etc/apt/sources.list >> ${rootdir}/etc/apt/sources.list
+chroot ${rootdir} apt update
 
 for PKG in ${FIRMWARE_PKGS}; do
     echo "$PKG        $PKG/license/accepted       boolean true" | \
@@ -37,7 +39,16 @@ PACKAGES_WANTED="$CORE_PACKAGES1 ${ACC_PACKAGES} ${LWR_TASK_PACKAGES} \
                  ${LWR_EXTRA_PACKAGES} ${LWR_FIRMWARE_PACKAGES} \
                  $CORE_PACKAGES2"
 
+[[ -f "${rootdir}/etc/apt/sources.list.d/deb-multimedia.list" ]] && rm -f ${rootdir}/etc/apt/sources.list.d/deb-multimedia.list
+echo "deb http://www.deb-multimedia.org stretch main non-free" > ${rootdir}/etc/apt/sources.list.d/deb-multimedia.list
+chroot ${rootdir} apt-get --allow-unauthenticated update
+chroot ${rootdir} apt-get --allow-unauthenticated -y install deb-multimedia-keyring
+chroot ${rootdir} apt-get update
+chroot ${rootdir} apt-get -y dist-upgrade
+
 chroot ${rootdir} apt-get -q -y install ${PACKAGES_WANTED}  >> vmdebootstrap.log 2>&1
+
+cp -a injections/* ${rootdir}/
 
 # Work out what extra packages we need for the installer to work. Need
 # to run these one at a time, as some of them may conflict if we ask
