@@ -1,0 +1,67 @@
+#!/bin/bash
+# 
+# ----------------------------------------------------------------------
+# Pipemenu for tint2
+# Written for CrunchBang Linux <http://crunchbang.org/>
+# by Philip Newborough (aka corenominal) <corenominal@corenominal.org>
+# ----------------------------------------------------------------------
+# Start pipemenu
+echo "    <openbox_pipe_menu>"
+
+if [ -f ~/.config/tint2/tint2rc.vert ]
+then
+	cat << _item_
+		<item label="Switch to vertical panel">
+_item_
+fi
+
+if [ -f ~/.config/tint2/tint2rc.horiz ]
+then
+	cat << _item_
+		<item label="Switch to horizontal panel">
+_item_
+fi
+
+cat << _menu_
+		<action name="Execute">
+			<command>
+				tint2switcher
+			</command>
+		</action>
+	</item>
+
+	<item label="Edit config file">
+		<action name="Execute">
+			<command>
+				geany ~/.config/tint2/tint2rc
+			</command>
+		</action>
+	</item>
+	<item label="Restart tint2">
+		<action name="Execute">
+			<command>
+				tint2restart
+			</command>
+		</action>
+	</item>
+	<separator label="Help?"/>
+	<item label="man page">
+		<action name="Execute">
+			<command>
+				terminator --command="man tint2"
+			</command>
+		</action>
+	</item>
+	<item label="Online Help">
+		<action name="Execute">
+			<command>
+				x-www-browser http://code.google.com/p/tint2/wiki/Welcome
+			</command>
+		</action>
+	</item>
+	
+_menu_
+
+# End pipemenu
+echo "    </openbox_pipe_menu>"
+exit 0

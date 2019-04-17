@@ -1,0 +1,28 @@
+## Openbox autostart.sh
+## ====================
+## When you login to your Openbox session, this autostart script 
+## will be executed to set-up your environment and launch any applications
+## you want to run at startup.
+##
+## Note*: some programs, such as 'nm-applet' are run via XDG autostart.
+## Run '/usr/lib/openbox/openbox-xdg-autostart --list' to list any
+## XDG autostarted programs.
+##
+## More information about this can be found at:
+## http://openbox.org/wiki/Help:Autostart
+eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
+eval $(ssh-agent) &
+tint2 &
+compton &
+hsetroot -solid "#6C908B" &
+nitrogen --restore &
+pnmixer &
+xfce4-power-manager &
+thunar --daemon &
+clipit &
+xset r rate 250 25 &
+xset b off &
+numlockx &
+kupfer --no-splash &
+live-cd-hacks &
+(sleep 1s && conky -q) &

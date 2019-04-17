@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Run on live-cd session only
+if [ -d /lib/live/mount/overlay ]; then
+	# Fix for gksudo in LiveCD
+	xhost +local:
+    
+    # Keyboard
+    setxkbmap -option lv3:ralt_switch,grp:switch,grp:shifts_toggle,grp_led:scroll de,us,gb,fr &
+fi
+exit 0

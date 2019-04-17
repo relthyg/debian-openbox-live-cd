@@ -1,0 +1,38 @@
+##
+# $HOME/.config/openbox/environment
+# This file sets some environmental variables in Openbox.
+# It may be executed by your $HOME/.profile as well.
+#
+
+if [ -d "/opt/bin" ] ; then
+    export PATH="/opt/bin:$PATH"
+fi
+
+if [ -d "$HOME/bin" ] ; then
+    export PATH="$HOME/bin:$PATH"
+fi
+
+if [ -d "$HOME/.npm-packages/bin" ] ; then
+    export PATH="$HOME/.npm-packages/bin:$PATH"
+fi
+
+if [ -d "$HOME/.gem/ruby/2.3.0/bin" ] ; then
+    export PATH="$HOME/.gem/ruby/2.3.0/bin:$PATH"
+fi
+
+#export LANG=en_US.UTF-8
+#export LANGUAGE=en_US.utf8
+#export LC_CTYPE="de_DE.UTF-8"
+#export LC_NUMERIC="de_DE.UTF-8"
+#export LC_TIME="de_DE.UTF-8"
+#export LC_COLLATE="de_DE.UTF-8"
+#export LC_MONETARY="de_DE.UTF-8"
+#export LC_MESSAGES="de_DE.UTF-8"
+#export LC_PAPER="de_DE.UTF-8"
+#export LC_NAME="de_DE.UTF-8"
+#export LC_ADDRESS="de_DE.UTF-8"
+#export LC_TELEPHONE="de_DE.UTF-8"
+#export LC_MEASUREMENT="de_DE.UTF-8"
+#export LC_IDENTIFICATION="de_DE.UTF-8"
+
+#export CHROMIUM_FLAGS='--enable-remote-extensions'
