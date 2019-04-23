@@ -1,4 +1,5 @@
 #!/bin/bash
+[[ ! $UID -eq 0 ]] && echo "You need to be root to run this script." && exit 1
 export TMP=/home/icke/tmp
 BASE=`grep -v ^# package-lists/base.list | xargs`
 EXTRA=`grep -v ^# package-lists/extra.list | xargs`
