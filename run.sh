@@ -1,4 +1,5 @@
 #!/bin/bash
+export TMP=/home/icke/tmp
 BASE=`grep -v ^# package-lists/base.list | xargs`
 EXTRA=`grep -v ^# package-lists/extra.list | xargs`
 FIRMWARE=`grep -v ^# package-lists/firmware.list | xargs`
