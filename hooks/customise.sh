@@ -39,13 +39,6 @@ PACKAGES_WANTED="$CORE_PACKAGES1 ${ACC_PACKAGES} ${LWR_TASK_PACKAGES} \
                  ${LWR_EXTRA_PACKAGES} ${LWR_FIRMWARE_PACKAGES} \
                  $CORE_PACKAGES2"
 
-[[ -f "${rootdir}/etc/apt/sources.list.d/deb-multimedia.list" ]] && rm -f ${rootdir}/etc/apt/sources.list.d/deb-multimedia.list
-echo "deb http://www.deb-multimedia.org stretch main non-free" > ${rootdir}/etc/apt/sources.list.d/deb-multimedia.list
-chroot ${rootdir} apt-get --allow-unauthenticated update
-chroot ${rootdir} apt-get --allow-unauthenticated -y install deb-multimedia-keyring
-chroot ${rootdir} apt-get update
-chroot ${rootdir} apt-get -y dist-upgrade
-
 chroot ${rootdir} apt-get -q -y install ${PACKAGES_WANTED}  >> vmdebootstrap.log 2>&1
 
 cp -a injections/* ${rootdir}/
