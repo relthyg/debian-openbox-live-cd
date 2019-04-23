@@ -2,3 +2,4 @@
 *.iso
 *.list
 !package-lists/*.list
+env.sh
