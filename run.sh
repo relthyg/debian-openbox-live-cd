@@ -14,6 +14,7 @@ lwr \
     --grub \
     --log="lwr.log" \
     --installer \
+    --di-daily \
     --base_debs="$BASE" \
     --extra="$EXTRA" \
     --firmware="$FIRMWARE" \
