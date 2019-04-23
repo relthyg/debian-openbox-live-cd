@@ -1,7 +1,13 @@
 #!/bin/bash
 [[ ! $UID -eq 0 ]] && echo "You need to be root to run this script." && exit 1
 
-[[ -f env.sh ]] && .env.sh
+LOCATION="$(dirname $(readlink -f "$0"))"
+
+lwr () {
+    PYTHONPATH="$LOCATION/live-wrapper${PYTHONPATH+:$PYTHONPATH}" python -c 'import lwr.run; lwr.run.main()' "$@"
+}
+
+[[ -f env.sh ]] && . env.sh
 
 BASE=`grep -v ^# package-lists/base.list | xargs`
 EXTRA=`grep -v ^# package-lists/extra.list | xargs`
