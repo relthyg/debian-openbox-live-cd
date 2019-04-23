@@ -61,7 +61,6 @@ thunar-media-tags-plugin
 thunar-archive-plugin
 engrampa
 baobab
-gksu
 gdebi
 galculator
 gsimplecal
@@ -80,8 +79,6 @@ mate-menus
 # Eye-Candy
 faenza-icon-theme
 gtk2-engines-murrine
-ttf-freefont
-ttf-liberation
 dmz-cursor-theme
 clearlooks-phenix-theme
 fonts-noto-hinted
@@ -95,7 +92,6 @@ geany
 geany-plugins
 atril
 clonezilla
-synaptic
 gparted
 lame
 figlet
