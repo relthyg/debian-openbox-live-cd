@@ -3,3 +3,4 @@
 *.list
 !package-lists/*.list
 env.sh
+env.lib.sh
