@@ -19,14 +19,6 @@ cat /etc/resolv.conf > ${rootdir}/etc/resolv.conf
 
 prepare_apt_source "${LWR_MIRROR}" "${LWR_DISTRIBUTION}"
 
-SOURCES_LIST=${rootdir}/etc/apt/sources.list
-cp ${SOURCES_LIST} root_dir_sources.list
-[[ -f ${rootdir}/etc/apt/sources.list.d/base.list ]] && cp ${rootdir}/etc/apt/sources.list.d/base.list root_dir_base.list
-
-FIRST_DEB=$(grep ^deb\  ${SOURCES_LIST} | head -n1)
-echo "$FIRST_DEB" >> ${SOURCES_LIST}
-echo "$FIRST_DEB" | sed "s/^deb/deb-src/g" >> ${SOURCES_LIST}
-
 chroot ${rootdir} apt update
 
 for PKG in ${FIRMWARE_PKGS}; do
