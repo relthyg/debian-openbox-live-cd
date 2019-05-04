@@ -2,7 +2,7 @@
 # customise script for live-wrapper, passed to vmdebootstrap as part
 # of the live build
 
-set -euxo pipefail
+set -exo pipefail
 
 rootdir=$1
 
