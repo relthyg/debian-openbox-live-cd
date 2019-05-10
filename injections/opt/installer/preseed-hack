@@ -1,4 +1,9 @@
 #!/bin/bash
 # Backup and tweak sources.list
 cp /etc/apt/sources.list /etc/apt/sources.list.postinstall.bak
-sed -i 's/buster main\$/buster main contrib non-free/g' /etc/apt/sources.list
+grep ^deb /etc/apt/sources.list.postinstall.bak | sed 's/buster main\$/buster main contrib non-free/g' > /etc/apt/sources.list
+# sed -i 's/buster main\$/buster main contrib non-free/g' /etc/apt/sources.list
+
+# Remove obsolete base.list
+rm -f /etc/apt/sources.list.d/base.list
+
