@@ -44,3 +44,5 @@ firmware-ti-connectivity
 firmware-zd1211
 intel-microcode
 midisport-firmware
+firmware-b43-installer
+broadcom-sta-dkms
