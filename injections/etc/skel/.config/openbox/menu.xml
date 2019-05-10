@@ -221,7 +221,7 @@
 			</item>
 		</menu>
 		<menu id="system" label="System">
-		    <menu execute="openbox-pipemenu-printing" id="PrintingPipeMenu" label="Printers"/>
+		    <!-- <menu execute="openbox-pipemenu-printing" id="PrintingPipeMenu" label="Printers"/> -->
 		    <item label="Clonezilla">
 				<action name="Execute">
 					<execute>
