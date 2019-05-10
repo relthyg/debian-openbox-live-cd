@@ -17,7 +17,7 @@ cryptsetup-bin
 lvm2
 memtest86+
 lightdm
-lightdm-gtk-greeter
+slick-greeter
 light-locker
 menu
 avahi-utils
