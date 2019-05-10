@@ -42,6 +42,8 @@ cups-pdf
 system-config-printer
 printer-driver-all
 python-xdg
+laptop-detect
+laptop-mode-tools
 #
 # desktop-environment
 openbox
