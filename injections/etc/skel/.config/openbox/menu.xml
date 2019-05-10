@@ -222,24 +222,10 @@
 		</menu>
 		<menu id="system" label="System">
 		    <menu execute="openbox-pipemenu-printing" id="PrintingPipeMenu" label="Printers"/>
-		    <item label="GParted">
-				<action name="Execute">
-					<execute>
-						gksudo gparted
-					</execute>
-				</action>
-			</item>
 		    <item label="Clonezilla">
 				<action name="Execute">
 					<execute>
 						terminator --title "Clonezilla" --command="sudo clonezilla"
-					</execute>
-				</action>
-			</item>
-			<item label="Synaptic Package Manager">
-				<action name="Execute">
-					<execute>
-						gksudo synaptic
 					</execute>
 				</action>
 			</item>
