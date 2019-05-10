@@ -76,6 +76,7 @@ wmctrl
 qt4-qtconfig
 menu-xdg
 mate-menus
+numlockx
 #
 # Eye-Candy
 faenza-icon-theme
