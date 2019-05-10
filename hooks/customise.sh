@@ -30,7 +30,7 @@ done
 CORE_PACKAGES1="initramfs-tools live-boot live-config"
 
 # Wanted for braille and speech support, #863177
-ACC_PACKAGES="brltty espeakup alsa-utils"
+ACC_PACKAGES="brltty alsa-utils"
 
 # Extra useful packages
 CORE_PACKAGES2="task-laptop task-english libnss-myhostname"
