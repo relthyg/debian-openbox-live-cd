@@ -6,6 +6,8 @@
                 file:///usr/share/openbox/menu.xsd">
 
 	<menu id="root-menu" label="Openbox 3">
+		<menu execute="openbox-menu" id="xdg-menu" label="All Applications"/>
+		<separator/>
 		<item label="Run Program">
 			<action name="Execute">
 				<execute>
@@ -42,15 +44,6 @@
 				</execute>
 			</action>
 		</item>
-		<item label="Media Player">
-			<action name="Execute">
-				<execute>
-					vlc
-				</execute>
-			</action>
-		</item>
-		<separator/>
-		<menu execute="xdg-menu lxde-applications-custom" id="xdg-menu" label="All Applications"/>
 		<separator/>
 		<menu execute="openbox-pipemenu-places" id="pipe-placesmenu" label="Places"/>
 		<menu execute="openbox-pipemenu-recent-files" id="pipe-recentfilesmenu" label="Recent Files"/>
@@ -216,16 +209,6 @@
 				<action name="Execute">
 					<execute>
 						nitrogen ~/images/wallpapers/
-					</execute>
-				</action>
-			</item>
-		</menu>
-		<menu id="system" label="System">
-		    <!-- <menu execute="openbox-pipemenu-printing" id="PrintingPipeMenu" label="Printers"/> -->
-		    <item label="Clonezilla">
-				<action name="Execute">
-					<execute>
-						terminator --title "Clonezilla" --command="sudo clonezilla"
 					</execute>
 				</action>
 			</item>
