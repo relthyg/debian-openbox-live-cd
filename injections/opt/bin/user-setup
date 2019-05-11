@@ -15,7 +15,7 @@
 HOMEDIR=$(sudo -u "$USER" xdg-user-dir HOME)
 
 # exit if flag is set
-[ -f "$HOMEDIR/.config/openbox-user-setup-flag" ] && exit 0
+[ -f "$HOMEDIR/.config/user-setup-flag" ] && exit 0
 
 # Otherwise, run the following
 # Link a wallpaper
@@ -23,7 +23,7 @@ HOMEDIR=$(sudo -u "$USER" xdg-user-dir HOME)
 ln -s /usr/share/backgrounds "$HOMEDIR/images/wallpapers/shared"
 
 # Set flag
-touch "$HOMEDIR/.config/openbox-user-setup-flag"
+touch "$HOMEDIR/.config/user-setup-flag"
 
 # Make sure to tidy up after yourself!
 chown -R $USER:$USER "$HOMEDIR"
