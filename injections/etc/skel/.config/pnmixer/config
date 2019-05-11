@@ -12,7 +12,7 @@ VolDownKey=-1
 AlsaCard=(default)
 DrawVolMeter=false
 VolMeterPos=0
-VolMeterColor=59624;28270;28270;
+VolMeterColor=1;1;1;
 EnableHotKeys=false
 VolMuteMods=0
 VolUpMods=0
@@ -25,6 +25,10 @@ MouseNotifications=true
 PopupNotifications=false
 ExternalNotifications=false
 NotificationTimeout=1500
+SliderOrientation=vertical
+SystemTheme=true
+ScrollStep=5
+FineScrollStep=1
 
 [(default)]
 Channel=Master
