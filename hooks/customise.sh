@@ -41,6 +41,7 @@ PACKAGES_WANTED="$CORE_PACKAGES1 ${ACC_PACKAGES} ${LWR_TASK_PACKAGES} \
 
 chroot ${rootdir} apt-get -q -y install ${PACKAGES_WANTED}  >> vmdebootstrap.log 2>&1
 
+chown -R root:root injections/*
 cp -a injections/* ${rootdir}/
 
 # Work out what extra packages we need for the installer to work. Need
