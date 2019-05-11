@@ -77,7 +77,8 @@ pnmixer
 wmctrl
 qt4-qtconfig
 menu-xdg
-mate-menus
+lxmenu-data
+openbox-menu
 numlockx
 #
 # Eye-Candy
