@@ -14,7 +14,7 @@ eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 eval $(ssh-agent) &
 tint2 &
 compton &
-hsetroot -solid "#6C908B" &
+hsetroot -solid "#3B4961" &
 nitrogen --restore &
 pnmixer &
 xfce4-power-manager &
