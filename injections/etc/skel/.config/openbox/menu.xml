@@ -6,8 +6,6 @@
                 file:///usr/share/openbox/menu.xsd">
 
 	<menu id="root-menu" label="Openbox 3">
-		<menu execute="openbox-menu" id="xdg-menu" label="LXMenu"/>
-		<separator/>
 		<item label="Run Program">
 			<action name="Execute">
 				<execute>
@@ -44,6 +42,7 @@
 				</execute>
 			</action>
 		</item>
+		<menu execute="openbox-menu lxde-applications.menu" id="xdg-menu" label="LXMenu"/>
 		<separator/>
 		<menu execute="openbox-pipemenu-places" id="pipe-placesmenu" label="Places"/>
 		<menu execute="openbox-pipemenu-recent-files" id="pipe-recentfilesmenu" label="Recent Files"/>
@@ -213,6 +212,29 @@
 				</action>
 			</item>
 		</menu>
+		<menu id="system" label="System">
+		    <item label="Configure Printers">
+				<action name="Execute">
+					<execute>
+                        pkexec system-config-printer
+					</execute>
+				</action>
+			</item>
+		    <item label="Clonezilla HDD Cloner">
+				<action name="Execute">
+					<execute>
+						terminator --title "Clonezilla" --command="sudo clonezilla"
+					</execute>
+				</action>
+			</item>
+			<item label="GParted Partition Editor">
+				<action name="Execute">
+					<execute>
+						pkexec gparted
+					</execute>
+				</action>
+			</item>
+        </menu>
 		<separator/>
 		<item label="Lock Screen">
 			<action name="Execute">
