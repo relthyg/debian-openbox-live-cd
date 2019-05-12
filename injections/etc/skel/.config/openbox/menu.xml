@@ -6,7 +6,7 @@
                 file:///usr/share/openbox/menu.xsd">
 
 	<menu id="root-menu" label="Openbox 3">
-		<menu execute="openbox-menu" id="xdg-menu" label="All Applications"/>
+		<menu execute="openbox-menu" id="xdg-menu" label="LXMenu"/>
 		<separator/>
 		<item label="Run Program">
 			<action name="Execute">
