@@ -12,8 +12,10 @@
 ## http://openbox.org/wiki/Help:Autostart
 eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
 eval $(ssh-agent) &
+lxpolkit &
 tint2 &
 compton &
+(sleep 1s && conky -q) &
 hsetroot -solid "#3B4961" &
 nitrogen --restore &
 pnmixer &
@@ -24,4 +26,3 @@ xset b off &
 numlockx &
 kupfer --no-splash &
 live-cd-hacks &
-(sleep 1s && conky -q) &
