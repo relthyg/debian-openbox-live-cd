@@ -1,7 +1,7 @@
 #!/bin/bash
 [[ ! $UID -eq 0 ]] && echo "You need to be root to run this script." && exit 1
 
-set -exo pipefail
+set -eo pipefail
 
 LOCATION="$(dirname $(readlink -f "$0"))"
 
